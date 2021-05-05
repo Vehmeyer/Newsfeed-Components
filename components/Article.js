@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Bob, Bill and Barry',
+    date: 'May 1st, 2021',
+    firstParagraph: `Bob`,
+
+    secondParagraph: `Bill`,
+
+    thirdParagraph: `Barry`
   }
 ];
 
@@ -151,8 +160,8 @@ function articleMaker(data){
   return articleContainer;
 };
 
-const test = articleMaker({title: "test", date: "1/1/2021", para1: "test1", para2: "test2", para3: "test3"});
-console.log(test);
+// const test = articleMaker({title: "test", date: "1/1/2021", para1: "test1", para2: "test2", para3: "test3"});
+// console.log(test);
 
 
 data.forEach((dataObj) => {
@@ -160,10 +169,12 @@ data.forEach((dataObj) => {
   articles.appendChild(dataItem);
 });
 
+
+  // +++0. create elements
   // +++1. append/prepend to add to DOM
   // +++2. add classes via classList.add()
   // +++3. add text via textContent
   // +++4. add eventListeners
   // +++5. is classList toggling needed? (complete with step 4 - eventListeners)
   // +++6. return SOMETHING
-  // 7. loop through data array of objects?
+  // +++7. loop through data array of objects?

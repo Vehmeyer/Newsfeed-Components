@@ -33,14 +33,14 @@ let menuItems = [
 */
 
 function menuMaker(arr){
-  const menuContainer = document.createElement("div");
+  const menu = document.createElement("div");
   const menuUL = document.createElement("ul");
-  const menuLi = document.createElement("li");
+  // const menuLi = document.createElement("li");
 
-  menuContainer.appendChild(menuUL);
+  menu.appendChild(menuUL);
   menuUL.appendChild(menuLi);
 
-  menuContainer.classList.add("menu");
+  menu.classList.add("menu");
 
   // syntax?
   menuItems.forEach((item) => {
@@ -56,3 +56,13 @@ function menuMaker(arr){
   return menuContainer;
 
 };
+
+
+  // +++0. create elements
+  // +++1. append/prepend to add to DOM
+  // +++2. add classes via classList.add()
+  // +++3. add text via textContent
+  // +++4. add eventListeners
+  // +++5. is classList toggling needed? (complete with step 4 - eventListeners)
+  // +++6. return SOMETHING
+  // +++7. loop through data array of objects?
