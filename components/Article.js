@@ -115,7 +115,9 @@ const data = [
   Refresh the page to see the new article.
 */
 
-function articleMaker(article){
+const articles = document.querySelector("div.articles");
+
+function articleMaker(data){
   const articleContainer = document.createElement("div");
   const articleTitle = document.createElement("h2");
   const articleDate = document.createElement("p");
@@ -147,13 +149,21 @@ function articleMaker(article){
   });
 
   return articleContainer;
+};
+
+const test = articleMaker({title: "test", date: "1/1/2021", para1: "test1", para2: "test2", para3: "test3"});
+console.log(test);
+
+
+data.forEach((dataObj) => {
+  const dataItem = articleMaker(dataObj);
+  articles.appendChild(dataItem);
+});
+
   // +++1. append/prepend to add to DOM
   // +++2. add classes via classList.add()
   // +++3. add text via textContent
-  // 4. add eventListeners
-  // 5. is classList toggling needed? (step 4 - eventListeners)
-  // 6. return SOMETHING
+  // +++4. add eventListeners
+  // +++5. is classList toggling needed? (complete with step 4 - eventListeners)
+  // +++6. return SOMETHING
   // 7. loop through data array of objects?
-}
-
-console.log(articleMaker(data));
