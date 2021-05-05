@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Bob, Bill and Barry',
+    date: 'May 1st, 2021',
+    firstParagraph: `Bob`,
+
+    secondParagraph: `Bill`,
+
+    thirdParagraph: `Barry`
   }
 ];
 
@@ -114,3 +123,58 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articles = document.querySelector("div.articles");
+
+function articleMaker(data){
+  const articleContainer = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const articleParaOne = document.createElement("p");
+  const articleParaTwo = document.createElement("p");
+  const articleParaThree = document.createElement("p");
+  const articleSpan = document.createElement("span");
+
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(articleParaOne);
+  articleContainer.appendChild(articleParaTwo);
+  articleContainer.appendChild(articleParaThree);
+  articleContainer.appendChild(articleSpan);
+
+  articleContainer.classList.add("article");
+  articleDate.classList.add("date");
+  articleSpan.classList.add("expandButton");
+
+  articleTitle.textContent = data.title;
+  articleDate.textContent = data.date;
+  articleParaOne.textContent = data.firstParagraph;
+  articleParaTwo.textContent = data.secondParagraph;
+  articleParaThree.textContent = data.thirdParagraph;
+  articleSpan.textContent = "+";
+
+  articleSpan.addEventListener("click", (event) => {
+    articleContainer.classList.toggle("article-open");
+  });
+
+  return articleContainer;
+};
+
+// const test = articleMaker({title: "test", date: "1/1/2021", para1: "test1", para2: "test2", para3: "test3"});
+// console.log(test);
+
+
+data.forEach((dataObj) => {
+  const dataItem = articleMaker(dataObj);
+  articles.appendChild(dataItem);
+});
+
+
+  // +++0. create elements
+  // +++1. append/prepend to add to DOM
+  // +++2. add classes via classList.add()
+  // +++3. add text via textContent
+  // +++4. add eventListeners
+  // +++5. is classList toggling needed? (complete with step 4 - eventListeners)
+  // +++6. return SOMETHING
+  // +++7. loop through data array of objects?
