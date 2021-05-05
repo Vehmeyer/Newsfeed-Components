@@ -124,5 +124,30 @@ function articleMaker(article){
   const articleParaThree = document.createElement("p");
   const articleSpan = document.createElement("span");
 
-  // return SOMETHING
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(articleParaOne);
+  articleContainer.appendChild(articleParaTwo);
+  articleContainer.appendChild(articleParaThree);
+  articleContainer.appendChild(articleSpan);
+
+  articleContainer.classList.add("article");
+  articleDate.classList.add("date");
+  articleSpan.classList.add("expandButton");
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParaOne.textContent = firstParagraph;
+  articleParaTwo.textContent = secondParagraph;
+  articleParaThree.textContent = thirdParagraph;
+  articleSpan.textContent = "+";
+
+
+  // +++1. append/prepend to add to DOM
+  // +++2. add classes via classList.add()
+  // +++3. add text via textContent
+  // 4. add eventListeners
+  // 5. is classList toggling needed? (step 4 - eventListeners)
+  // 6. return SOMETHING
+  // 7. loop through data array of objects?
 }
