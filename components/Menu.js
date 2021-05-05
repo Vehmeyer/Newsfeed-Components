@@ -32,37 +32,35 @@ let menuItems = [
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
 
+const header = document.querySelector(".header");
+const menuButton = document.querySelector("img");
+
+
 function menuMaker(arr){
   const menu = document.createElement("div");
   const menuUL = document.createElement("ul");
-  // const menuLi = document.createElement("li");
-
-  menu.appendChild(menuUL);
-  menuUL.appendChild(menuLi);
-
-  menu.classList.add("menu");
-
-  // syntax?
-  menuItems.forEach((item) => {
-    const newItem = menuMaker(item);
-    menuUL.appendChild(newItem);
+  
+  arr.forEach(e => {
+    const menuLi = document.createElement("li");
+    menuLi.textContent = e;
+    menuUL.appendChild(menuLi); 
   });
 
-  const menuButton = document.querySelector(".menu-button");
-  menuButton.addEventListener("click", (event) => {
-    menuContainer.classList.toggle("menu--open");
-  })
+  header.appendChild(menu);
+  menu.appendChild(menuUL);
+  
+  menu.classList.add("menu");
 
-  return menuContainer;
+  menuButton.addEventListener("click", (event) => {
+    menu.classList.toggle("menu--open");
+  });
+
+  return menu;
 
 };
 
+menuMaker(menuItems);
+console.log(menuMaker(menuItems));
 
-  // +++0. create elements
-  // +++1. append/prepend to add to DOM
-  // +++2. add classes via classList.add()
-  // +++3. add text via textContent
-  // +++4. add eventListeners
-  // +++5. is classList toggling needed? (complete with step 4 - eventListeners)
-  // +++6. return SOMETHING
-  // +++7. loop through data array of objects?
+
+  
